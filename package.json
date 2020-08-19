@@ -9,7 +9,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "recoil": "^0.0.10"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -18,7 +19,18 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "plugins": [
+      "react-hooks"
+    ],
+    "rules": {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": [
+        "warn", {
+          "additionalHooks": "useRecoilCallback"
+        }
+      ]
+    }
   },
   "browserslist": {
     "production": [
